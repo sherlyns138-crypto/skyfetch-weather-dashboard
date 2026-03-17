@@ -85,57 +85,54 @@ h1 {
     height: 100px;
 }
 
-/* .search-section */
+/* Search Section */
 .search-section {
-    display: flex;                /* Aligns input and button horizontally [1] */
-    gap: 10px;                    /* Creates space between items [3] */
+    display: flex;
+    gap: 10px;
     margin-bottom: 30px;
     width: 100%;
-    max-width: 600px;             /* Keeps it centered on large screens */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Responsive adjustment for mobile */
 @media (max-width: 480px) {
     .search-section {
-        flex-direction: column;   /* Stacks items on small screens [2] */
+        flex-direction: column;
     }
 }
 
-/* #city-input */
 #city-input {
-    flex: 1;                      /* Takes up all available space [7] */
-    padding: 12px 20px;           /* Inner spacing [8] */
-    border-radius: 25px;          /* Pill shape */
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 25px;
     border: 2px solid #ddd;
     font-size: 1rem;
-    outline: none;                /* Removes default focus */
+    outline: none;
     transition: border-color 0.3s;
 }
 
 #city-input:focus {
-    border-color: #007bff;        /* Highlight on focus */
+    border-color: #007bff;
 }
 
-/* #search-btn */
 #search-btn {
     padding: 12px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Example Gradient */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
-    transition: transform 0.2s, opacity 0.2s; /* Smooth interactive effects */
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 #search-btn:hover {
     opacity: 0.9;
-    transform: translateY(-1px);  /* Subtle lift effect */
+    transform: translateY(-1px);
 }
 
-/* Style for error message */
+/* Error Message */
 .error-message {
     background-color: #ffe6e6;
     color: #b30000;
@@ -146,7 +143,6 @@ h1 {
     text-align: center;
 }
 
-/* Optional: style the emoji/icon */
 .error-icon {
     font-size: 30px;
     margin-bottom: 10px;
@@ -158,7 +154,7 @@ h1 {
     color: #555;
 }
 
-/* Spinner circle */
+/* Spinner */
 .spinner {
     width: 50px;
     height: 50px;
@@ -168,17 +164,11 @@ h1 {
     animation: spin 1s linear infinite;
 }
 
-/* Spin animation */
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Center everything */
 .loading-container {
     display: flex;
     flex-direction: column;
@@ -187,7 +177,26 @@ h1 {
     margin-top: 20px;
 }
 
-/* Individual forecast card */
+/* Forecast Cards */
+.forecast-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.forecast-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
 .forecast-card {
     background: linear-gradient(135deg, #f5f7ff, #e4ebff);
     padding: 20px;
@@ -197,13 +206,11 @@ h1 {
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .forecast-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
-/* Day name (h4) */
 .forecast-card h4 {
     font-size: 1.1rem;
     color: #333;
@@ -211,58 +218,95 @@ h1 {
     font-weight: 600;
 }
 
-/* Temperature */
-.forecast-card p:nth-of-type(1) { /* first p inside card */
+.forecast-card p:nth-of-type(1) {
     font-size: 1.8rem;
-    color: #667eea; /* matches theme */
+    color: #667eea;
     font-weight: bold;
     margin: 10px 0;
 }
 
-/* Weather description */
-.forecast-card p:nth-of-type(2) { /* second p inside card */
+.forecast-card p:nth-of-type(2) {
     font-size: 0.9rem;
     color: #666;
     text-transform: capitalize;
 }
 
-/* Weather icon */
 .forecast-card img {
     width: 60px;
     height: 60px;
 }
 
 @media (max-width: 768px) {
-    /* Adjust forecast grid for smaller screens */
     .forecast-container {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 
-    /* Adjust card padding */
     .forecast-card {
         padding: 15px;
     }
 
-    /* Optional: reduce font sizes slightly */
-    .forecast-title {
-        font-size: 1.3rem;
-    }
-
-    .forecast-card h4 {
-        font-size: 1rem;
-    }
-
-    .forecast-card p:nth-of-type(1) {
-        font-size: 1.5rem;
-    }
-
-    .forecast-card p:nth-of-type(2) {
-        font-size: 0.8rem;
-    }
-
-    .forecast-card img {
-        width: 50px;
-        height: 50px;
-    }
+    .forecast-title { font-size: 1.3rem; }
+    .forecast-card h4 { font-size: 1rem; }
+    .forecast-card p:nth-of-type(1) { font-size: 1.5rem; }
+    .forecast-card p:nth-of-type(2) { font-size: 0.8rem; }
+    .forecast-card img { width: 50px; height: 50px; }
 }
 
+/* Recent Searches */
+.recent-searches-section {
+    margin: 20px 0;
+    display: none; /* Hidden initially, shown via JS */
+}
+
+.recent-searches-section h4 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#recent-searches-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.recent-search-btn {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.recent-search-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.recent-search-btn:active {
+    transform: scale(0.95);
+}
+
+/* Clear History Button */
+.clear-history-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.clear-history-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff4c4c;
+    transform: translateY(-1px);
+}
