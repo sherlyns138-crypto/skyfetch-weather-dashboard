@@ -84,3 +84,105 @@ h1 {
     width: 100px;
     height: 100px;
 }
+
+/* .search-section */
+.search-section {
+    display: flex;                /* Aligns input and button horizontally [1] */
+    gap: 10px;                    /* Creates space between items [3] */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;             /* Keeps it centered on large screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 480px) {
+    .search-section {
+        flex-direction: column;   /* Stacks items on small screens [2] */
+    }
+}
+
+/* #city-input */
+#city-input {
+    flex: 1;                      /* Takes up all available space [7] */
+    padding: 12px 20px;           /* Inner spacing [8] */
+    border-radius: 25px;          /* Pill shape */
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    outline: none;                /* Removes default focus */
+    transition: border-color 0.3s;
+}
+
+#city-input:focus {
+    border-color: #007bff;        /* Highlight on focus */
+}
+
+/* #search-btn */
+#search-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Example Gradient */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, opacity 0.2s; /* Smooth interactive effects */
+}
+
+#search-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);  /* Subtle lift effect */
+}
+
+/* Style for error message */
+.error-message {
+    background-color: #ffe6e6;
+    color: #b30000;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 6px solid #ff4d4d;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Optional: style the emoji/icon */
+.error-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* Spinner circle */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Center everything */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
