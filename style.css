@@ -186,3 +186,83 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
+
+/* Individual forecast card */
+.forecast-card {
+    background: linear-gradient(135deg, #f5f7ff, #e4ebff);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+/* Day name (h4) */
+.forecast-card h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Temperature */
+.forecast-card p:nth-of-type(1) { /* first p inside card */
+    font-size: 1.8rem;
+    color: #667eea; /* matches theme */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Weather description */
+.forecast-card p:nth-of-type(2) { /* second p inside card */
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: capitalize;
+}
+
+/* Weather icon */
+.forecast-card img {
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    /* Adjust forecast grid for smaller screens */
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    /* Adjust card padding */
+    .forecast-card {
+        padding: 15px;
+    }
+
+    /* Optional: reduce font sizes slightly */
+    .forecast-title {
+        font-size: 1.3rem;
+    }
+
+    .forecast-card h4 {
+        font-size: 1rem;
+    }
+
+    .forecast-card p:nth-of-type(1) {
+        font-size: 1.5rem;
+    }
+
+    .forecast-card p:nth-of-type(2) {
+        font-size: 0.8rem;
+    }
+
+    .forecast-card img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
